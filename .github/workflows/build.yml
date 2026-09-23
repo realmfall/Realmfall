@@ -1,0 +1,32 @@
+name: Build Realmfall Windows
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: windows-latest
+
+    steps:
+      - name: Get Realmfall
+        uses: actions/checkout@v6
+
+      - name: Install Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Realmfall
+        run: npm run make
+
+      - name: Upload Windows build
+        uses: actions/upload-artifact@v6
+        with:
+          name: Realmfall-Windows
+          path: out/**
