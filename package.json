@@ -9,8 +9,21 @@
     "start": "electron .",
     "make": "electron-forge make"
   },
+  "config": {
+    "forge": {
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "realmfall"
+          }
+        }
+      ]
+    }
+  },
   "devDependencies": {
     "@electron-forge/cli": "^7.8.3",
+    "@electron-forge/maker-squirrel": "^7.8.3",
     "electron": "^38.0.0"
   }
 }
