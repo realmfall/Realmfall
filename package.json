@@ -4,7 +4,11 @@
   "description": "Realmfall",
   "main": "main.js",
   "author": "Realmfall",
-  "license": "MIT",
+"license": "MIT",
+"repository": {
+  "type": "git",
+  "url": "https://github.com/realmfall/Realmfall.git"
+},
   "scripts": {
     "start": "electron .",
     "make": "electron-forge make"
